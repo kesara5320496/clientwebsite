@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExploreWorld - Premium Tourism Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<script>
+  // Animate stats counting
+  function animateValue(id, start, end, duration) {
+    const obj = document.getElementById(id);
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      obj.innerHTML = Math.floor(progress * (end - start) + start);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+
+  // Trigger animation when section is visible
+  document.addEventListener('DOMContentLoaded', function() {
+    animateValue("years-exp", 0, 15, 2000);
+    animateValue("happy-clients", 0, 5000, 2000);
+    animateValue("money-save", 0, 100, 2000);
+  });
+</script>
+<body>
+    <!-- Admin Login Button (Top Right) -->
+    <div class="admin-login">
+        <a href="admin/login.html"><i class="fas fa-lock"></i> Admin</a>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header>
+        <div class="logo">
+            <h1>Explore<span>World</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#tours">Tours</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 id="hero-title">Discover Amazing Places</h1>
+            <p id="hero-subtitle">Explore the world's most breathtaking destinations with our expert guides</p>
+            <a href="#contact" class="btn">Book Now</a>
+        </div>
+    </section>
+
+    <!-- Featured Destinations -->
+    <section class="destinations" id="destinations">
+        <h2 class="section-title">Featured Destinations</h2>
+        <div class="destination-grid" id="destination-container">
+            <!-- Dynamically loaded from JavaScript -->
+        </div>
+    </section>
+
+    <!-- Popular Tours -->
+    <section class="tours" id="tours">
+        <h2 class="section-title">Popular Tours</h2>
+        <div class="tour-cards" id="tour-container">
+            <!-- Dynamically loaded from JavaScript -->
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section class="about">
+  <h2 class="section-title">About ExploreWorld</h2>
+  
+  <div class="about-content">
+    <p class="description">We are a premier travel company dedicated to providing unforgettable experiences. Our team of experts carefully curates each tour to ensure you get the most authentic and enjoyable experience possible.</p>
+    
+    <div class="stats">
+      <div class="stat-item">
+        <h3 class="stat-number" id="years-exp">15</h3>
+        <p>Years Experience</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="stat-number" id="happy-clients">5000</h3>
+        <p>Happy Clients</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="stat-number" id="money-save">100 %</h3>
+        <p>Money Saved</p>
+      </div>
+    </div>
+  </div>
+  
+  
+</section>
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonial-slider" id="testimonial-container">
+            <!-- Dynamically loaded from JavaScript -->
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p id="contact-address"><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Adventure City, 10101</p>
+                <p id="contact-phone"><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p id="contact-email"><i class="fas fa-envelope"></i> info@exploreworld.com</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Subject">
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ExploreWorld</h3>
+                <p>Making your travel dreams a reality since 2008.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#tours">Tours</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                
+                <form id="newsletterForm">
+                    
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year">2023</span> ExploreWorld. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
